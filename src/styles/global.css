@@ -1,0 +1,29 @@
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:linear-gradient(120deg,#89f7fe,#66a6ff);
+}
+
+/* Buttons */
+
+button{
+border:none;
+padding:10px 18px;
+border-radius:6px;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+/* Inputs */
+
+input{
+padding:8px;
+border-radius:5px;
+border:1px solid #ccc;
+width:200px;
+}
