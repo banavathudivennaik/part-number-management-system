@@ -2,7 +2,7 @@
 const express = require("express");
 const mysql = require("mysql2");
 const cors = require("cors");
-
+const path = require("path");
 const app = express();
 
 app.use(cors());
@@ -646,7 +646,13 @@ if (result.length > 0) {
   });
 
 });
+// Serve the React production build
+app.use(express.static(path.join(__dirname, "../build")));
 
+// Serve the React app at the root URL
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../build/index.html"));
+});
 /* ================= START SERVER ================= */
 
 // app.listen(5000, () => {
