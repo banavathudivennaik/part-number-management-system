@@ -24,7 +24,7 @@ function AddDocumentPopup({
   const [showCustomPopup, setShowCustomPopup] = useState(false);
   const [customPartNumber, setCustomPartNumber] = useState("");
 
-  const [confirmedPartNumber, setConfirmedPartNumber] = useState("");
+  const [, setConfirmedPartNumber] = useState("");
 
 
   // FETCH USERS
