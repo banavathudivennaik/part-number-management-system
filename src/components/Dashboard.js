@@ -88,7 +88,7 @@ const printPDF = () => {
   /* ================= LOAD PROJECTS ================= */
   const fetchProjects = async () => {
 
-    const res = await axios.get("http://localhost:5000/projects");
+    const res = await axios.get("/projects");
 
     const data = res.data.map(p => ({
       id: p.id,
@@ -121,7 +121,7 @@ const printPDF = () => {
 };
 
     const res = await axios.post(
-      "http://localhost:5000/addProject",
+      "/addProject",
       newProject
     );
 
@@ -143,7 +143,7 @@ const printPDF = () => {
 
     console.log("📤 FINAL PAYLOAD FROM DASHBOARD:", docData);
 
-    await axios.post("http://localhost:5000/addDocument", {
+    await axios.post("/addDocument", {
       project_name: docData.project_name,
       document_name: docData.document_name,
       project_manager: docData.project_manager,
@@ -170,7 +170,7 @@ const printPDF = () => {
     const project = projects[index];
 
     await axios.delete(
-      `http://localhost:5000/deleteProject/${project.id}`
+      `/deleteProject/${project.id}`
     );
 
     await fetchProjects();
@@ -202,7 +202,7 @@ const printPDF = () => {
     try {
 
       const res = await axios.put(
-        `http://localhost:5000/updateProject/${editData.id}`,
+        `/updateProject/${editData.id}`,
         {
           name: editData.name,
           partNumber: editData.partNumber,

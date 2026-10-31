@@ -13,7 +13,7 @@ function CreateProjectPopup({ closePopup, addProject, loggedUser }) {
   useEffect(() => {
 
     axios
-      .get("http://localhost:5000/users1")
+      .get("/users1")
       .then((res) => {
 
         setusers1(res.data);

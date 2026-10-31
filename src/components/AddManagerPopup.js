@@ -32,7 +32,7 @@ function AddManagerPopup({ closePopup, currentUserRole, loggedUser }) {
     try {
 
       // const res = await axios.post(
-      //   "http://localhost:5000/addManager",
+      //   "/addManager",
       //   formData
       // );
       const addedData = {
@@ -41,7 +41,7 @@ function AddManagerPopup({ closePopup, currentUserRole, loggedUser }) {
 };
 
 const res = await axios.post(
-  "http://localhost:5000/addManager",
+  "/addManager",
   addedData
 );
 

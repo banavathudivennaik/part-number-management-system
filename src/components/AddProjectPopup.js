@@ -65,7 +65,7 @@ function AddDocumentPopup({
 
     const res = await axios.post(
 
-      "http://localhost:5000/generatePartNumber",
+      "/generatePartNumber",
 
       {
         project_name:selectedProject
@@ -101,7 +101,7 @@ const checkSamePartNumber = async () => {
   try {
 
     const res = await axios.get(
-      `http://localhost:5000/documents/${selectedProject}`
+      `/documents/${selectedProject}`
     );
 
     if (res.data.length === 0) {
