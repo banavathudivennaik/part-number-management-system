@@ -11,11 +11,22 @@ app.use(express.json());
 
 /* ================= DATABASE CONNECTION ================= */
 
+// const db = mysql.createPool({
+//   host: "localhost",
+//   user: "root",
+//   password: "Diven@123",
+//   database: "partnumberdb",
+//   waitForConnections: true,
+//   connectionLimit: 10,
+//   queueLimit: 0,
+// });
+
 const db = mysql.createPool({
-  host: "localhost",
-  user: "root",
-  password: "Diven@123",
-  database: "partnumberdb",
+  host: process.env.MYSQLHOST,
+  port: Number(process.env.MYSQLPORT),
+  user: process.env.MYSQLUSER,
+  password: process.env.MYSQLPASSWORD,
+  database: process.env.MYSQLDATABASE,
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
