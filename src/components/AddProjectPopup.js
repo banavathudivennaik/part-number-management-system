@@ -31,8 +31,7 @@ function AddDocumentPopup({
 
   useEffect(()=>{
 
-    axios
-    .get("http://localhost:5000/users1")
+    axios.get("/users1")
 
     .then((res)=>{
 
