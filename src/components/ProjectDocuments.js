@@ -71,24 +71,35 @@ const handlePrint = () => {
 };
   /* ================= FETCH DOCUMENTS ================= */
 
-  useEffect(() => {
+useEffect(() => {
+  axios
+    .get(`/documents/${encodeURIComponent(projectName)}`)
+    .then((res) => {
+      setDocuments(res.data);
+    })
+    .catch((err) => {
+      console.error("Unable to fetch documents:", err);
+    });
+}, [projectName]);
 
-    axios
-      .get(
-       `${process.env.REACT_APP_API_URL}/documents/${decodeURIComponent(projectName)}`
-      )
-      .then(res => {
+  // useEffect(() => {
 
-        setDocuments(res.data);
+  //   axios
+  //     .get(
+  //      `${process.env.REACT_APP_API_URL}/documents/${decodeURIComponent(projectName)}`
+  //     )
+  //     .then(res => {
 
-      })
-      .catch(err => {
+  //       setDocuments(res.data);
 
-        console.log(err);
+  //     })
+  //     .catch(err => {
 
-      });
+  //       console.log(err);
 
-  }, [projectName]);
+  //     });
+
+  // }, [projectName]);
 
   /* ================= FORMAT DATE ================= */
 
